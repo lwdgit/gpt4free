@@ -11,6 +11,7 @@ def search(internet_access, prompt):
         if not internet_access:
             return []
         
+        print('search', prompt)
         results = duckduckgo_search(q=prompt)
 
         if not search:

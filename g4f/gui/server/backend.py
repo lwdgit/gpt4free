@@ -36,7 +36,7 @@ class Backend_Api:
             provider        = request.json.get('provider').split('g4f.Provider.')[1]
             
             messages = special_instructions[jailbreak] + conversation + search(internet_access, prompt) + [prompt]
-            
+            print('messages', messages)
             def stream():
                 if provider:
                     answer = g4f.ChatCompletion.create(model=model,
