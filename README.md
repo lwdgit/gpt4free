@@ -2,33 +2,46 @@
 
 By using this repository or any code related to it, you agree to the [legal notice](./LEGAL_NOTICE.md). The author is not responsible for any copies, forks, reuploads made by other users, or anything else related to gpt4free. This is the author's only account and repository. To prevent impersonation or irresponsible actions, please comply with the GNU GPL license this Repository uses.
 
-- latest pypi version: [`0.1.5.9`](https://pypi.org/project/g4f/0.1.5.9):
+- latest pypi version: [`0.1.6.2`](https://pypi.org/project/g4f/0.1.6.2):
 ```sh
 pip install -U g4f
 ```
 
+or if you just want to use the gui or interference api, install with [pipx](https://pypa.github.io/pipx/)
+
+```sh
+pipx install g4f
+```
+
 ## New features
-- Telegram Channel: https://t.me/g4f_official
+- Telegram Channel: https://t.me/g4f_channel
 - g4f GUI is back !!:   
 Install g4f with pip and then run:
-```py
+
+```sh
+g4f gui
+```
+
+or 
+
+```sh
 python -m g4f.gui.run
 ```
-or
-```py
-from g4f.gui import run_gui; run_gui()
-```
+
 preview:
 
 <img width="1470" alt="image" src="https://github.com/xtekky/gpt4free/assets/98614666/57ad818a-a0dd-4eae-83e1-3fff848ae040">
 
-- run interference from pypi package:
+- run interference api from pypi package:
+
+```sh
+g4f api
+```
+
+or
+
 ```py
 python -m g4f.interference.run
-```
-or
-```py
-from g4f.interference import run_interference; run_interference()
 ```
 
 ## Table of Contents
@@ -49,6 +62,7 @@ from g4f.interference import run_interference; run_interference()
 - [Contributors](#contributors)
 - [Copyright](#copyright)
 - [Star History](#star-history)
+- [License](#license)
 
 ## Getting Started
 
@@ -78,7 +92,9 @@ git clone https://github.com/xtekky/gpt4free.git
 cd gpt4free
 ```
 
-3. (Recommended) Create a virtual environment to manage Python packages for your project:
+3. (Recommended) Create a Python virtual environment:
+You can follow the [Python official documentation](https://docs.python.org/3/tutorial/venv.html) for virtual environments.
+
 
 ```
 python3 -m venv venv
@@ -325,26 +341,26 @@ print(f"Result:", response)
 
 ### interference openai-proxy api (use with openai python package)
 
-#### run interference from pypi package:
+#### run interference api from pypi package:
 ```py
-from g4f.interference import run_interference
+from g4f.api import run_api
 
-run_interference()
+run_api()
 ```
 
-#### run interference from repo:
+#### run interference api from repo:
 If you want to use the embedding function, you need to get a huggingface token. You can get one at https://huggingface.co/settings/tokens make sure your role is set to write. If you have your token, just use it instead of the OpenAI api-key.
-
-get requirements:
-
-```sh
-pip install -r etc/interference/requirements.txt
-```
 
 run server:
 
 ```sh
-python3 -m etc/interference.app
+g4f api
+```
+
+or
+
+```sh
+python -m g4f.api
 ```
 
 ```py
@@ -628,4 +644,16 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
         <img width="500" alt="Star History Chart" src="https://api.star-history.com/svg?repos=xtekky/gpt4free&type=Date">
 </a>
 
+## License
 
+<table>
+  <tr>
+     <td>
+       <p align="center"> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/GPLv3_Logo.svg/1200px-GPLv3_Logo.svg.png" width="80%"></img>
+    </td>
+    <td> 
+      <img src="https://img.shields.io/badge/License-GNU_GPL_v3.0-red.svg"/> <br> 
+This project is licensed under <a href="./LICENSE">GNU_GPL_v3.0</a>. <img width=2300/>
+    </td>
+  </tr>
+</table>

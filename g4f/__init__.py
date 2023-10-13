@@ -5,7 +5,7 @@ from .Provider import BaseProvider
 from .typing import Messages, CreateResult, Union
 from .debug import logging
 
-version = '0.1.5.9'
+version = '0.1.6.2'
 version_check = True
 
 def check_pypi_version() -> None:
@@ -48,14 +48,11 @@ def get_model_and_provider(model    : Union[Model, str],
 
 class ChatCompletion:
     @staticmethod
-    def create(
-        model: Union[Model, str],
-        messages : Messages,
-        provider : Union[type[BaseProvider], None] = None,
-        stream   : bool = False,
-        auth     : Union[str, None] = None,
-        **kwargs
-    ) -> Union[CreateResult, str]:
+    def create(model: Union[Model, str],
+               messages : Messages,
+               provider : Union[type[BaseProvider], None] = None,
+               stream   : bool = False,
+               auth     : Union[str, None] = None, **kwargs) -> Union[CreateResult, str]:
 
         model, provider = get_model_and_provider(model, provider, stream)
 
@@ -71,12 +68,11 @@ class ChatCompletion:
 
     @staticmethod
     async def create_async(
-        model: Union[Model, str],
+        model   : Union[Model, str],
         messages: Messages,
         provider: Union[type[BaseProvider], None] = None,
-        stream: bool = False,
-        **kwargs
-    ) -> str:
+        stream  : bool = False, **kwargs) -> str:
+        
         if stream:
             raise ValueError(f'"create_async" does not support "stream" argument')
 
